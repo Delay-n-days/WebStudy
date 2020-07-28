@@ -1,0 +1,157 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style></style>
+    <!-- 内嵌式的 -->
+
+    <!-- <Script src="my.js">
+    // 不能写代码  --单行注释
+    </Script> -->
+    <script type=>
+        // var myname= prompt('Please printf your name');
+        // alert(myname);//js不声明可以使用尽量不要使用name作为变量名
+
+        // var num1=010;//var  数据类型是根据等号右边的值确定的//js 数据类型可以变化//数字前面加0表示8进制
+        // console.log(num1);
+
+        // console.log(Number.MAX_VALUE);//输出 1.7976931348623157e+308// 无穷大
+        // console.log('hu'-100);//输出NaN,不是数字
+
+        // console.log(isNaN(8));//isNaN()//判断是否是数字，并且返回一个值是：flase不是：ture
+
+        // console.log(isNaN('hu'));
+        // var str='wo 是 "dog"'//yes外双内单，外单内双 //var str='wo 'dog''//no
+
+        // alert('你好\n你像一朵"花"')//注意换行和引号;
+        // var str='ajsdhaoissbh';
+        // console.log(str.length); //检测获取字符串的长度length
+        // console.log('沙漠'+'骆驼');
+        // console.log('12'+12);// 输出1212
+        // var age =22; 
+        // console.log('我'+age+'岁');//!!!!!!!!!!!  //数值相加，字符相连
+
+        // var age= prompt('请输入你的年龄');
+        // var str ='您今年'+age+'岁了';
+        // alert(str);
+        // var vara=undefined;
+        // console.log(vara+'hu');//字符串相连
+        // console.log(vara+1);//NaN
+        // var varb=null;
+        // console.log(varb+'pink');//字符串相连
+        // console.log(varb+1);//1
+        // var num =10;
+        // var str ='pink';
+        // var boo =true;
+        // var und =undefined;
+        // var Nul =null; 
+        // console.log(typeof num);//number
+        // console.log(typeof str);//string
+        // console.log(typeof boo);//boolean
+        // console.log(typeof und);//undefind
+        // console.log(typeof Nul);//object
+
+        // var age =prompt('请输入你的年龄');
+        // console.log(age);
+        // console.log(typeof age);//string
+        // var num =10;
+        // var str=num.toString();
+        // console.log(str);
+        // console.log(typeof str);
+        // console.log(String(num));
+        // console.log(num+'');//隐式转换//转换为字符型的
+
+        // var str='223';
+        // var name= parseInt(str);
+        // console.log(str);
+        // console.log(parseInt(str));//只取整数部分，不四舍五入
+        // console.log(parseInt('120m/s'));//120
+        // console.log(parseInt('v=120m/s'));//NaN
+        // console.log(str-0);//隐式转换->数字223
+
+
+        // console.log(parseFloat('3.1444'));//3.1444
+        ////Boolean();转换为 布尔值
+        ////' ',0,NaN,null,undefind,都转换为false,其他转换为ture
+
+        // for (var index = 0; index < 100; index++) {
+        //     console.log('nihao个屁' + index);
+
+        // }
+        // function getSum(num1,num2){
+        //     console.log(num1 + num2);
+        // }
+        // getSum(1,2);    //3
+        // getSum(1,2,3);  //3
+        // getSum(1);      //NaN  形参与实参不一定必须匹配
+        // function kak(){
+        //     return 0x12;
+        // }
+        // console.log(kak());//函数前面不需要定义返回值类型
+
+        // function getResult(num1,num2){
+        //     return [num1+num2,num1-num2,num1*num2,num1/num2];
+        // }
+        // var re = getResult  (1,2);//会返回一个数组 不同之处
+        // console.log(re);//(4)?[3, -1, 2, 0.5]//如果没有return 返回 undefined
+
+        // function fn() {
+        //     console.log(arguments);//Arguments(3)?[1, 2, 3, callee: ?, Symbol(Symbol.iterator): ?]
+        //     console.log(arguments.length);//3
+        //     console.log(arguments[1]);//2//好处是不用定义形参了,不用关心形参的数量
+        // }
+        // fn(1,2,3);//-> Arguments(3)?[1, 2, 3, callee: ?, Symbol(Symbol.iterator): ?]
+        // // //展示的是一个伪数组 并不是真正意义上的数组，具有length属性 按照索引方式进行存储的，没有真正数组的一些方法如pop() push()  只有函数才有 arguements
+
+        // var fun=function(){//第二种函数声明方法
+        //     console.log(arguments);
+        // }
+        // fun(1,2,3);
+
+        // 作用域:
+        //     代码名字在某个范围内起作用和效果，目的是提高程序的可靠性，更重要的是减少命名冲突
+        //     2.js的作用域 全剧作用域，局部作用域
+        //     全局作用域 整个 script 标签，或者是一个单独的js文件
+        //     局部作用域 只在函数内部起作用和效果
+        //     根据作用域的不同 分为全局变量，和局部变量
+        // var num=10;//全局变量
+        // console.log(num);
+        // function fnn() {
+        //     console.log(num);//全局变量可用
+        // }
+        // fnn();
+        //如果在函数内部 没有声明，直接赋值 的变量也属于全局变量
+        // function fnn() {
+        //     sti=12
+        //     console.log(sti);//全局变量可用
+        // }
+        // fnn();
+        // console.log(sti);//可用函数内部的 sti变量（没有声明，直接赋值）的全局变量
+        //全局变量在浏览器关闭时才会销毁
+        //局部变量 程序结束就销毁
+        //js没有 块级作用域 es6才会新增块级作用域
+        //块级作用域{}if{}类似 for{int i} 括号内声明，其他都能使用
+        
+        //作用域链
+        //函数内部还有函数的话，就又诞生一个作用域
+        var num=10;
+        function fn(){//函数内部还有函数
+            
+            var num=20;
+            function fun(){
+                console.log(num);//内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值，这种结构我们称之为域链
+            }
+           fun();
+        }
+         fn();  //-> 20 就近原则
+        document.write(num);
+    </script>
+
+</head>
+
+<body>
+    <!-- 1 -->
+</body>
+
+</html>

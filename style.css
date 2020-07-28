@@ -1,0 +1,80 @@
+p{
+    color: #e06c75;
+}
+h1{
+    color:white
+}
+body{
+    background-image: url(image/0002.jpg);
+}
+span{
+    color:#e06c75
+}
+pre{
+    color:#e06c75
+}
+code{
+    color:#e06c75
+}
+address{
+    color:#e06c75;
+}
+.bold{
+    font-weight:bold;
+}
+.italic{
+    font-style:italic
+}
+ul.a{
+    list-style-type: square;
+    /* 方形  */
+}
+ul.b{
+    list-style-type: disc;
+    /* 实心圆 */
+}
+ul.c{
+    list-style-type: circle;
+    /* 空心圆 */
+}
+ul.d{
+    list-style-image: url("image/0001.ico");
+    /* 没有 */
+}
+/* 表格边框 */
+table{
+    border: 1px solid #110000;
+    /* 边框：1像素 实线 黑色 */
+    border-collapse : collapse;
+}
+th{
+    border: 1px solid rgb(136, 30, 235);
+    padding: 5px;
+
+}
+td{
+    border: 1px solid rgba(12, 248, 43, 0.74);
+    padding: 5px
+    /* 边距 */
+}
+thead th{
+    background:gray;
+    color:white
+}
+tbody th{
+    background:lightgrey;
+    columns:#e06c75
+}
+buttton.btn-style{
+    color:white
+}
+label{
+    color:#e06c75
+}
+ul{
+    color:#e06c75
+}
+ol{
+    color:#e06c75
+}
+compare

@@ -1,0 +1,480 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+    <style></style>
+    <script>
+        // fun(); //函数式可以在声明前调用
+        // function fun() {
+        //     console.log(22);
+        // }
+        // //fun1();//报错，变量式无法在声明前调用
+        // var fun1 = function () {
+        //     console.log(23);
+        // }
+        // fun1();
+
+        //1. js引擎运行js分两步：预解析 代码执行
+        //2.预解析 js引擎会把所有的 var和function 提升到作用域最前边
+        //2. 预解析分为 变量预解析和函数预解析
+        //      变量提升就是把所有的变量声明提升到当前的作用域的最前面，不提升赋值操作
+        // console.log(num);
+        // var num=10;
+        // //上面相当于执行了以下代码
+        // // var num;
+        // // console.log(num); undefined
+        // // num=10;
+        // function f1() {
+        //     var a=b=c=9
+        //     //相当于 var a=9;b=9;c=9; b和c相当于未声明的全局变量
+        //     //集体声明的形式是这样的
+        //     //var a=9,b=9,c=9;
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        // }
+        // f1();
+        // console.log(c);
+        // console.log(b);
+        // console.log(a);//报错
+
+        // 创建对象
+        // var obj={};创建一个空对象
+        // var obj={
+        //     uname:'张三丰',
+        //     age : 18,
+        //     sayHi:function(){
+        //         console.log('hi')
+        //     }
+        // };
+        // console.log(obj.uname);//第一种调用方法
+        // console.log(obj['uname']);//第二种调用方法
+        // obj.sayHi();//hi
+        // //变量：单独存在 对象属性：不需要声明使用：对象.属性
+        // //函数：单独声明且调用的 对象方法:对象.方法();
+
+        // //使用new Object 创建对象
+        // var obj1=new Object();
+        // obj1.age =18
+        // obj1.SayHi=function(){
+        //     console.log('hi');
+        // }
+        // console.log(obj['age']);//第二种调用方法
+        // obj.sayHi();//hi
+
+        //构造函数:快速创建多个对象 相当于java类
+        //相同的属性 ，相同的方法
+        // function 构造函数名() {
+        //     this.属性=值；
+        //     this.方法=function() {}
+        // }
+        // function Star(uname,age,sex) {
+        //     this.uname=uname;
+        //     this.age=age;
+        //     this.sex=sex;
+        //     this.print=function(sang) {
+        //         console.log(uname);
+        //         console.log(age);
+        //         console.log(sex);
+        //         console.log(sang);
+        //     }
+        // }
+        // var ldh =new Star('刘德华','18','男');
+        // ldh.print('火');
+        // console.log(ldh);
+        //let 作用域变量
+        //const 常量
+
+        //for in
+        // var obj={
+        //     uname:'张三丰',
+        //     age : 18,
+        //     sayHi:function(aa){
+        //         console.log(Math.max(aa,obj.age))
+        //     }
+        // };
+        // obj.sayHi(30);
+
+        // Math 对象
+        // Math.floor(1.9);//1 往小了取     
+        // Math.celi(1.1); //2 往大了取
+        // Math.round(1.4);//1 四舍五入
+        // var ran=Math.random();//随机整数
+        // console.log(ran);
+        // var mm =function Ran(min,max) {//两个值之间的随机整数
+
+        //   return   Math.floor(Math.random()*(max-min +1))+min;
+        // } 
+        // for (let index = 0; index < 10; index++) {
+        //     console.log(mm(0,10))
+
+        // }
+
+
+        // 时间函数
+        // Date() 日期对象 是一个构造函数 必须使用new来调用我们的日期对象
+        // var arr = new Array();
+        // var obj = new Object();
+        // var date = new Date();//没有参数 返回当前系统时间
+        // console.log(date);//Sat Jul 25 2020 11:24:57 GMT+0800 (中国标准时间)
+        // //参数常用的写法 数值型 2019,10,01 或者是 2019-10-1 8:8:8'
+        // var date1 = new Date(2019, 10, 01);
+        // console.log(date1);//返回了11月  Fri Nov 01 2019 00:00:00 GMT+0800 (中国标准时间)
+        // var date2 = new Date('2019-10-1 8:8:8');//字符串类型的
+        // console.log(date2);//Tue Oct 01 2019 08:08:08 GMT+0800 (中国标准时间)
+        // console.log(date.getFullYear());//2020  返回当前年份
+        // console.log(date.getMonth());   //6月   应该是7月 记得+1月 返回当前月份
+        // console.log(date.getMonth() + 1);   //6月   应该是7月 记得+1月 返回当前月份
+        // console.log(date.getDate());    //25    返回正确 25号
+        // console.log(date.getDay());     //6     周一返回的是1，周六返回6，周日返回0 
+        // console.log(date.getHours());   //11    时
+        // console.log(date.getMinutes()); //40    分
+        // console.log(date.getSeconds()); //59    秒
+        // console.log(date.getTime());    //1595648864989 距离1970年1月1号过了多少ms
+        // console.log(date.valueOf());    //1595648864989 距离1970年1月1号过了多少ms
+        // console.log(Date.now());        //也是总毫秒数
+        // var date4 = +new Date();//这是当前时间,也可以
+        // console.log(date4);             //也是总毫秒数(时间戳)
+
+        //数组对象
+        // 数组字面量创建
+        var arr = [1, 2, 3];
+        //new创建
+        // var arr1 = new Array(2);//2表示长度为2，空的
+        // var arr2=new Array(2,3);//表示里面存了 2,3
+        // console.log(arr2);
+        // console.log(arr2 instanceof Array); //检测是否为数组
+        // console.log(Array.isArray(arr2));   //检测是否为数组
+        // console.log(arr.push(4,'pink'));    //也可以从前面添加
+        // console.log(arr);
+        // //push 是可以给数组追加的新的元素
+        // //push() 参数直接写 数组元素就可以了
+        // //push 后 返回值是新数组的长度
+        // //原数组会发生个变化
+        // arr.unshift('red');
+        // console.log(arr);
+        // // unshift,在数组前面添加一个数组元素 返回值长度
+        // arr.pop();//删除数组的最后一个元素
+        // console.log(arr);
+        // console.log(arr.pop());//返回值  为删除的元素
+        // arr.shift();//删除数组前面的一个数字
+        // console.log(arr);
+        // console.log(arr.shift());//返回值  为删除的元素
+        // var arr = [1, 2, 3];
+        // arr.reverse();//翻转
+        // console.log(arr);
+        // arr = [1, 2, 3,5,5415,45,54,54,5464,2];
+        // console.log(arr);
+        // arr.sort();
+        // console.log(arr);//会出错，sort只能转换位数相同的数组 [1, 2, 2, 3, 45, 5, 54, 54, 5415, 5464]
+        // arr.sort(function (a,b){
+        //     //return b-a;//降序排序 
+        //     return a-b;//升序排序 谁在上面用谁
+        // })
+        // console.log(arr);
+        // arr = [1, 2, 3,5,5415,45,54,54,5464,2];
+        // console.log(arr.indexOf(5));//4  若有，返回该该数值在数组中的索引号；失败 返回-1
+        // console.log(arr.indexOf(2));     //1//从前面开始查找
+        // console.log(arr.lastIndexOf(2)); //9//从后面开始查找 
+        // console.log(arr.toString());        //数组转字符串 带","1,2,3,5,5415,45,54,54,5464,2
+        // console.log(arr.join("-"));         //带分隔符的字符串1-2-3-5-5415-45-54-54-5464-2
+
+        //基本包装类型
+        // var str='asda0'
+        // console.log(str.length);
+        //对象才有属性和方法 ，复杂数据类型才有属性和方法
+        // 简单数据类型为啥会有Length呢？
+        // 基本包装类型：就是把简单数据类型包装成了复杂数据类型
+        //  把简单数据类型包装成复杂数据类型
+        // var temp = new String('asda0');//string是个类啊
+        //把临时变量给 str
+        // str=temp;
+        // 销毁这个临时变量
+        // temp=null;
+        //包装成复杂基本类型，就能使用 属性和方法了 类似的 引用类型还有 Number和Boolean
+
+        // 字符串对象
+        //字符串是不可变的，不会删除 所以不要大量的拼接字符串
+        // var str='hu';
+        // var str='bubu'     
+        // 看上去变化了，但系统会开辟一个新的内存存放字符串
+        //根据字符返回位置
+        // var str='改革春风吹满地，春天来了'
+        // console.log(str.indexOf('春'));//2
+        // console.log(str.indexOf('春',3));//8 从位置3开始查找，第二个春的位置在8
+        // console.log(str.lastIndexOf('春'));//8 从后面开始查找  
+        var str = '0u改革春风吹满地，春天来了hjt'
+        // 根据位置返回字符
+        console.log(str.charAt(5));//风  返回字符
+        console.log(str.charCodeAt(5)); //39118 返回ascii码
+        console.log(str.charCodeAt(0)); //48 返回ascii码
+        console.log(str[5]); //风  返回字符
+        console.log(str.concat('hjt'));//0u改革春风吹满地，春天来了hjt //在后面链接字符串 相当于+ 实际上+最常用
+        console.log(str.substr(5, 4));//风吹满地 截取字符串 重要
+        console.log(str.replace('hjt', '胡金涛'));//替换第一个字符串
+
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="image/0002.ico">
+
+</head>
+
+<body>
+    <!-- 块级元素和行内元素（不换行） -->
+    <!-- 块级元素可以报刊行内元素和其他块级元素 -->
+    <!-- 行内元素只能包含数据和其他行内元素 -->
+    <!-- 连续的空格和换行符合并成一个空格 -->
+    <h1>我的网页</h1>
+    <p> <br> 请按f12</br>查看<span>控制台</span>效果</p>
+    <script type="text/javascript" src="my.js"></script>
+    <pre>
+        <!-- 保存缩进效果 -->
+        <!-- 保留字替换 -->
+        &#60;h1&#62;我的网页&#60;/h1&#62;
+        &#60;p&#62; &#60;br&#62; 请按f12&#60;/br&#62;查看&#60;span&#62;控制台&#60;/span&#62;效果&#60;/p&#62; 
+        &#60;script type=&#34;text/javascript&#34; src=&#34;my.js&#34;&#62;&#60;/script&#62;
+        <code>
+            <!-- 代码标签-->
+            console.log(str.charAt(5));//风  返回字符
+            console.log(str.charCodeAt(5)); //39118 返回ascii码
+            console.log(str.charCodeAt(0)); //48 返回ascii码
+            console.log(str[5]); //风  返回字符
+            console.log(str.concat('hjt'));//0u改革春风吹满地，春天来了hjt //在后面链接字符串 相当于+ 实际上+最常用
+            console.log(str.substr(5, 4));//风吹满地 截取字符串 重要
+            console.log(str.replace('hjt', '胡金涛'));//替换第一个字符串
+        </code> 
+    </pre>
+
+    <p>
+        <!-- 变量 输入 输出格式 -->
+        <va>变量a</va><br><kbd>输入b</kbd></br><samp>输出c</samp>
+    </p>
+    <!-- 引用"" -->
+    <p>孔子说<q>学而不思则罔，思而不学则殆</q></p>
+    <blockquote>
+        <!-- 缩进 -->
+        <p style="background-color:#282c34; line-height:14.25pt; margin:0pt">
+            <span
+                style="background-color:#282c34; color:#dfd1d1; font-family:Consolas; font-size:10.5pt">这代码写的真好看</span>
+            <span style="color:#dfd1d1;font-family:Consolas;font-size:10.5pt">孔子说<q>学而不思则罔，思而不学则殆</q></span>
+        </p>
+    </blockquote>
+    <p>
+        <cite>
+            <!-- 标题 -->
+            平凡的世界
+        </cite>
+        <br>
+        <abbr title="英国广播公司">BBC</abbr>
+        </br>
+        <br>
+        <dfn>
+            <!-- 斜体表示 -->
+            <!-- 有助于创建文档的索引或术语表 -->
+            HTML
+        </dfn>是一个创建网页的标准语言
+        <br>
+        <!-- 拼音 -->
+        <ruby>魑 <rp>(</rp>
+            <rt>chi</rt>
+            <rp>)</rp>
+        </ruby>
+        <ruby>魅 <rp>(</rp>
+            <rt>mei</rt>
+            <rp>)</rp>
+        </ruby>
+        <ruby>魍 <rp>(</rp>
+            <rt>wang</rt>
+            <rp>)</rp>
+        </ruby>
+        <ruby>魉 <rp>(</rp>
+            <rt>liang</rt>
+            <rp>)</rp>
+        </ruby>
+        <!-- 反写 -->
+        <br>
+        <bdo dir="rtl">天下第一武道会</bdo>
+        <br>
+
+
+        <!-- 格式化 -->
+        <!-- 加粗 -->
+        <strong>你秃了，也变强</strong>
+        <!-- 斜体 -->
+    <p>你<em>秃</em>了，也变强了</p>
+    <!-- 使用样式表进行加粗斜体 -->
+    <p class="bold">又粗</p>
+    <p class="italic">又斜</p>
+    <!-- del 删除线 ins下划线 -->
+    <p> 的<del>巨物</del><ins>字体</ins> </p>
+    <s>男人就应该1心1意</s>
+    <br>
+    <!-- mark 黄色标记 -->
+    <mark>黄色的</mark>
+    <!-- sub下标 ，sup上标 -->
+    <br>A<sub>1</sub>=X<sup>2</sup>
+    <!-- small 变小 -->
+    <br><small>本网页只供学习使用</small>
+
+
+    <!-- 列表 -->
+    <br> 今天只做三件事
+    <!-- 无序列表 默认没有标号 -->
+    <ul class="a">
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>写代码</li>
+    </ul>
+    <ul class="b">
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>写代码</li>
+    </ul>
+    <ul class="c">
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>写代码</li>
+    </ul>
+    <ul class="d">
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>写代码</li>
+    </ul>
+    <!-- 有序列表 自带标号-->
+    <ol type="I" reversed>
+        <!-- 罗马字符 颠倒显示 不影响列表顺序-->
+        <li>先吃饭</li>
+        <li>再写代码</li>
+        <li>最后睡觉</li>
+    </ol>
+    <!-- 表格 -->
+    <table>
+        <!-- 表格标题 -->
+        <caption>人员表</caption>
+
+        <!-- 列分类 -->
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>随便说话</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>hjt</td>
+                <td>男</td>
+                <td>你的名字是</td>
+            </tr>
+            <tr>
+                <th>hmh</td>
+                <td>女</td>
+                <td>你的名字是</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- 横跨3列 -->
+                <td colspan="3">上述人员不存在</td>
+            </tr>
+        </tfoot>
+    </table>
+    <fieldset>
+        <legend>账号密码</legend>
+        <label for="account">账号</label> ：<input type="text" ,name="account"><br><br>
+        <label for="password">密码</label> ：<input type="password" ,name="password"><br><br>
+        <label for="sex">性别
+            <select name="sex">
+                <option value="male">男</option>
+                <option value="famale">女</option>
+            </select>
+            <label><input type="radio" name="sex" value="male">男</label>
+            <label><input type="radio" name="sex" value="famale">女</label>
+            <label for="age">年龄
+                <select name="age">
+                    <optgroup label="1~3岁">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="4~6岁">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </optgroup>
+                    <optgroup label="7~9岁">
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </optgroup>
+                    <optgroup label="10~12岁">
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </optgroup>
+                </select>
+            </label><br><br>
+    </fieldset>
+    <details open>
+        <summary>一些杂乱的输入</summary>
+    <fieldset>
+        <legend>密保问题</legend>
+        <label for="q3">你的生日是</label> ：<input type="text" ,name="q3"><br><br>
+        <label for="q4">你母亲的生日是</label> ：<input type="text" ,name="q4"><br><br>
+        <!-- input checkbox -->
+        </fieldset>
+        <input type="checkbox" name="things[]"value="eat">吃饭
+        <input type="checkbox" name="things[]"value="sleep">睡觉
+        <input type="checkbox" name="things[]"value="play">打豆豆
+        <label>时间：<input type="time" name="time"></label><br><br>
+        <label>日期：<input type="date" name="date"></label><br><br>
+        <label>时间：<input type="month" name="month"></label><br><br>
+        <label>时间：<input type="week" name="week"></label><br><br>
+        <label>选个喜欢的颜色<input type="color" name="color"></label><br><br>
+        <label class="aaa">我是一个按钮哦<input type="image" src="image/0003.png"width="32px"height="32px" alt="ico" id="btn"></label><br><br>
+        <label class="aaa">一个看不见的按钮 <input type="hidden" value="niaa" id="btn"></label>
+        <label>菇娘，不知今年芳龄几何<input type="number" name="age" value="1" max="100" min="0" step="1"></label><br><br>
+        <label>你问我爱你有多深，我爱你有<p id="demo"></p> <input type="range" name="love" min="0" max="10000" step="100" id="love" oninput="myFunction()"></label><br><br>
+        <label>邮箱：<input type="email" name="email" placeholder="只能输入邮箱哦"required></label><br><br>
+        <label>电话：<input type="tel" name="tel" placeholder="只限手机哦" max="11"></label><br><br>
+        <label>网站：<input type="url" name="url"placeholder="请输入https或者http开头的网址"size="30" list="urll"></label><br><br>
+        <!-- 输出 -->
+        <textarea name="sys"placeholder="写下你的评论" cols="40" rows="5"></textarea>
+    </details>
+
+  <!-- 关联 -->
+        <datalist id="urll">
+            <option value="https://github.com/">github</option>
+            <option value="https://www.baidu.com/">baidu</option>
+        </datalist>
+
+ 
+    <input type="submit" value="提交" id="btn1">
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("love").value;
+        document.getElementById("demo").innerHTML =  x+"分";
+}
+        var btn = document.getElementById("btn");
+        //按钮点击
+        btn.onclick = function () {
+            alert("你点击了确定");
+        }
+        var btn1 = document.getElementById("btn1");
+        //按钮点击
+        btn1.onclick = function () {
+            alert("你点击了确定1");
+        }
+    </script>
+    <address>
+        <strong>联系我们</strong><br>
+        邮箱：<a href=" mailto: 1046244532@qq.com">1046244532@qq.com</a> <br>
+    </address>
+    <image src="image/0003.png" alt="一个小图标" width="48px" height="48px">
+        </p><iframe src="https:www.bilibili.com" frameborder="0"width=1024px height="800px"></iframe>
+</body>
+
+</html>
